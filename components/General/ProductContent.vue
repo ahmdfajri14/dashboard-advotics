@@ -7,7 +7,7 @@
         <v-icon>mdi-dots-vertical</v-icon>
         </div>
         <v-hover v-for="(item, key) in product" :key="key" v-slot="{ hover }">
-         <v-card class="card-product" width="230px" height="80px" :elevation="hover ? 12 : 2">
+         <v-card  :class="`${hover? 'card-product-hover' : 'card-product'}`" width="230px" height="80px" :elevation="hover ? 12 : 2">
             <v-row>
                   <v-col  sm="3">
                  <img :src="item.src" height="43px" width="48px"  />
@@ -48,6 +48,10 @@ export default {
 }
 .card-product {
     background-color: #ffff;
+    margin: 20px 10px 10px 10px
+}
+.card-product-hover {
+    background-color: #FFE7BD;
     margin: 20px 10px 10px 10px
 }
 .product-title {
